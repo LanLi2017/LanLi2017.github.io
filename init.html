@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="scripts/chart.js"></script>
+<body>
+<h1>WHO Coronavirus(COVID-19) Situation Reports [2020]
+    <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/who_covid_19_situation_reports">Github</a></h1>
+<p>This folder summarizes the confirmed cases from <a
+        href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">WHO COVID-2019
+    situation reports</a>.
+    WHO defines the confirmed case as "a person with laboratory confirmation of 2019-nCoV infection,
+    irrespective of clinical signs and symptoms. "
+    (<a href="https://www.who.int/publications/i/item/who-2019-nCoV-surveillanceguidance-2020.8">Source</a>)
+    Therefore, its data on and after Feb 13 should have a huge gap compared with our daily reports.
+    In order to bring a more comprehensive picture of the current coronavirus situation,
+    we create this folder, which will serve as a good complementary to our daily report and the dashboard.</p>
+
+<label> Choose one of the countries
+    <select class="country" name="country">
+        <option value=""> Select One...</option>
+        <option value="China">China</option>
+        <option value="US">US</option>
+        <option value="Turkey">Turkey</option>
+        <option value="Haiti">Haiti</option>
+</select>
+</label>
+
+<div class="result"></div>
+
+<div id="my_dataviz"></div>
+<script>
+const selectElement = document.querySelector('.country');
+var china_csv = "transpose_ds/who_covid_19_China_transpose.csv";
+var us_csv = "transpose_ds/who_covid_19_US_transpose.csv";
+var turkey_csv = "transpose_ds/who_covid_19_Turkey_transpose.csv";
+var haiti_csv = "transpose_ds/who_covid_19_haiti_transpose.csv";
+selectElement.addEventListener('change', (event) => {
+    console.log(event.target.value);
+    if(event.target.value === 'China')
+        Chart.display(china_csv, 'China');
+
+    if(event.target.value ==='US')
+        Chart.display(us_csv, 'US');
+
+    if(event.target.value === 'Turkey')
+        Chart.display(turkey_csv, 'Turkey');
+
+    if(event.target.value ==='Haiti')
+        Chart.display(haiti_csv, 'Haiti');
+
+});
+
+
+</script>
+</body>
+</html>
