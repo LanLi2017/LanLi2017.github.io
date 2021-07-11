@@ -97,19 +97,22 @@ var Chart = {
                 x = 120;
                 y = 450;
             }
-
-          var annotation = svg.append('g');
-          annotation.append('text')
+            var annotation = svg.append('g');
+            annotation.append('text')
             .attr('x', x)
             .attr('y', y)
             .classed('annotation', true)
             .text(highlight);
-          // annotation.append('rect')
-          //   .attr('x', 60)
-          //   .attr('y', 380)
-          //   .attr('width', 400)
-          //   .attr('height', 20)
-          //   .classed('annotation', true);
+            annotation.append('rect')
+            .attr('x', x)
+            .attr('y', (y-10))
+            .attr('width', 350)
+            .attr('height', 20)
+              .attr('fill', d3.schemeCategory10[1])
+                .style('opacity', 0.4)
+            .classed('annotation', true);
+
+
     }
 
     }
