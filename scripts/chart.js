@@ -138,25 +138,25 @@ var Chart = {
             var x = 20;
             var y = 40;
             if(country === 'China'){
-                highlight = "The confirmed cases break out on 01/28";
+                highlight = "The confirmed cases break out on 01/26";
                 x = 10;
                 y = 450;
             }
             else if (country === 'US'){
-                highlight = "The confirmed cases break out on 03/15";
+                highlight = "The confirmed cases break out on 03/22";
                 x = 40;
                 y = 450;
 
             }
 
             else if (country === 'Turkey'){
-                highlight =  "The confirmed cases break out happened on 03/18";
+                highlight =  "The confirmed cases break out happened on 03/27";
                 x = 60;
                 y = 450;
             }
 
             else if (country === "Haiti"){
-                highlight = "The confirmed cases break out around 05/05";
+                highlight = "The confirmed cases break out around 05/09";
                 x = 120;
                 y = 450;
             }
