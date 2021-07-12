@@ -6,6 +6,32 @@ var Chart = {
             width = 600 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
+        var narrative = d3.select("#narrative");
+
+        if(country === 'China'){
+            narrative.html("")
+            .append("text")
+            .text("The trend of Covid-19 situation in China is first it increases sharply then flatten out");
+        }
+
+        if(country === 'US'){
+            narrative.html("")
+            .append("text")
+            .text("The trend of Covid-19 situation in US is that it keeps increasing.");
+        }
+        if(country === 'Turkey'){
+            narrative.html("")
+            .append("text")
+            .text("The trend of Covid-19 situation in Turkey is that it keeps increasing.");
+        }
+        if(country === 'Haiti'){
+            narrative.html("")
+            .append("text")
+            .text("The break-out date in Haiti is the latest one. The trend of Covid-19 situation in Haiti is " +
+                "that it keeps increasing.");
+        }
+
+
         var svg = d3.select("#my_dataviz")
             .html("")
             .append("svg")
