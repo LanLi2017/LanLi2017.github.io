@@ -4,6 +4,30 @@
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="scripts/chart.js"></script>
+<style>
+    .overlay {
+        fill: none;
+        pointer-events: all;
+    }
+
+    .focus circle {
+        fill: steelblue;
+    }
+
+    .focus text {
+        font-size: 14px;
+    }
+
+    .tooltip {
+        fill: white;
+        stroke: #000;
+    }
+
+    .tooltip-date, .tooltip-count {
+        font-weight: bold;
+    }
+
+</style>
 <body>
 <h1>WHO Coronavirus(COVID-19) Situation Reports [2020]
     <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/who_covid_19_situation_reports">Github</a></h1>
@@ -30,6 +54,7 @@
 <div class="result"></div>
 
 <div id="my_dataviz"></div>
+
 <script>
 const selectElement = document.querySelector('.country');
 var china_csv = "transpose_ds/who_covid_19_China_transpose.csv";

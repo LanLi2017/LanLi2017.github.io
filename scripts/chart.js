@@ -1,3 +1,4 @@
+// tooltip: https://bl.ocks.org/Qizly/8f6ba236b79d9bb03a80
 var Chart = {
     display: function (csv_p, country) {
 
@@ -14,6 +15,11 @@ var Chart = {
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
         var parseDate = d3.timeParse('%m/%d/%Y');
+        var bisectDate = d3.bisector(function (d) {
+            return d.date;
+
+        }).left;
+
         var dateFormat = d3.utcFormat('%m/%d');
         //"transpose_ds/who_covid_19_China_transpose.csv"
         d3.csv(csv_p,
@@ -56,6 +62,63 @@ var Chart = {
                             return y(d.value)
                         })
                     );
+
+                // add focus
+                var focus = svg.append('g')
+                    .attr("class", "focus")
+                    .style("display", "none");
+                focus.append("circle")
+                    .attr("r", 5);
+
+                focus.append("rect")
+                    .attr("class", "tooltip")
+                    .attr("width", 120)
+                    .attr("height", 50)
+                    .attr("x", 10)
+                    .attr("y", -22)
+                    .attr("rx", 4)
+                    .attr("ry", 4);
+
+                focus.append("text")
+                    .attr("class", "tooltip-date")
+                    .attr("x", 18)
+                    .attr("y", -2);
+
+                focus.append("text")
+                    .attr("x", 18)
+                    .attr("y", 18)
+                    .text("Confirmed:");
+
+                focus.append("text")
+                    .attr("class", "tooltip-count")
+                    .attr("x", 90)
+                    .attr("y", 18);
+
+                svg.append("rect")
+                    .attr("class", "overlay")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .on("mouseover", function () {
+                        focus.style("display", null);
+
+                    })
+                    .on("mouseout", function () {
+                        focus.style("display", "none");
+
+                    })
+                    .on("mousemove", mousemove);
+
+                function mousemove(){
+                    var x0 = x.invert(d3.mouse(this)[0]),
+                        i = bisectDate(data, x0, 1),
+                        d0 = data[i-1],
+                        d1 = data[i],
+                        d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+                    focus.attr("transform", "translate("+x(d.date)+", "+y(d.value)+")");
+                    focus.select(".tooltip-date").text(dateFormat(d.date));
+                    focus.select(".tooltip-count").text(d.value)
+                }
+
                 // add labels
                 svg.append('text')
                     .attr('transform', 'translate(' + (width / 2.5) + ',' + (height + margin.bottom) + ')')
