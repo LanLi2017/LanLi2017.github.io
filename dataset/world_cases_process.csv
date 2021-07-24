@@ -1,0 +1,219 @@
+country,count,code
+Globally,8385440,
+China,84940,CHN
+Outside of China,8300500,
+Singapore,41473,SGP
+Philippines,27799,PHL
+Japan,17740,JPN
+Republic of Korea,12306,
+Malaysia,8529,MYS
+Australia,7391,AUS
+New Zealand,1157,NZL
+Vietnam,342,
+Mongolia,201,MNG
+Brunei Darussalam,141,BRN
+Cambodia,129,KHM
+Lao People's Democratic Republic,19,LAO
+Fiji,18,FJI
+Papua New Guinea,8,PNG
+Guam,185,GUM
+French Polynesia,60,PYF
+Northern Mariana Islands,30,MNP
+New Caledonia,21,NCL
+Russian Federation,569063,
+The United Kingdom,300473,
+Spain,245268,ESP
+Italy,238159,ITA
+Germany,187764,DEU
+Turkey,184031,TUR
+France,153557,FRA
+Belgium,60348,BEL
+Netherlands,49319,NLD
+Belarus,56657,BLR
+Sweden,56043,SWE
+Portugal,38089,PRT
+Switzerland,31117,CHE
+Ireland,25355,IRL
+Ukraine,34984,UKR
+Poland,31015,POL
+Romania,23080,ROU
+Israel,19876,ISR
+Austria,17155,AUT
+Denmark,12344,DNK
+Kazakhstan,16351,KAZ
+Serbia,12616,SRB
+Armenia,19157,ARM
+Czechia,10230,
+Norway,8692,NOR
+Republic of Moldova,13106,MDA
+Finland,7117,FIN
+Azerbaijan,11329,AZE
+Luxembourg,4091,LUX
+Tajikistan,5279,TJK
+Hungary,4081,HUN
+Uzbekistan,5855,UZB
+Greece,3227,GRC
+Bosnia and Herzegovina,3202,BIH
+Bulgaria,3674,BGR
+North Macedonia,4664,
+Croatia,2269,HRV
+Estonia,1977,EST
+Kyrgyzstan,2789,KGZ
+Iceland,1816,ISL
+Lithuania,1784,LTU
+Slovakia,1562,SVK
+Slovenia,1511,SVN
+Albania,1838,ALB
+Latvia,1108,LVA
+Cyprus,985,CYP
+Georgia,895,GEO
+Andorra,855,AND
+San Marino,709,SMR
+Malta,663,MLT
+Montenegro,337,MNE
+Monaco,99,MCO
+Liechtenstein,83,LIE
+Holy See,12,
+Kosovo,1873,
+Isle of Man,336,IMN
+Jersey,318,JEY
+Guernsey,252,GGY
+Faroe Islands,187,FRO
+Gibraltar,176,GIB
+Greenland,13,GRL
+India,380532,IND
+Bangladesh,102292,BGD
+Indonesia,42762,IDN
+Thailand,3146,THA
+Maldives,2137,MDV
+Nepal,7848,NPL
+Sri Lanka,1947,LKA
+Myanmar,286,
+Bhutan,67,BTN
+Timor-Leste,24,TLS
+Iran,197647,
+Saudi Arabia,145991,SAU
+Pakistan,165062,PAK
+Qatar,84441,QAT
+United Arab Emirates,43752,ARE
+Kuwait,38074,KWT
+Egypt,50437,EGY
+Afghanistan,27878,AFG
+Oman,26818,OMN
+Bahrain,20430,BHR
+Morocco,9074,MAR
+Iraq,25717,IRQ
+Sudan,8020,SDN
+Djibouti,4557,DJI
+Somalia,2719,SOM
+Lebanon,1495,LBN
+Tunisia,1132,TUN
+Jordan,1001,JOR
+Yemen,913,YEM
+Libya,510,
+Syrian Arab Republic,187,SYR
+occupied Palestinian territory,795,
+United States of America,2149166,
+Brazil,955377,BRA
+Peru,240908,PER
+Chile,225103,CHL
+Canada,99853,CAN
+Mexico,159793,MEX
+Ecuador,49097,ECU
+Colombia,57046,COL
+Dominican Republic,24645,DOM
+Argentina,35552,ARG
+Panama,22597,PAN
+Bolivia,20685,BOL
+Honduras,10299,HND
+Guatemala,11251,GTM
+El Salvador,4200,SLV
+Haiti,4688,HTI
+Cuba,2295,CUB
+Venezuela,3386,VEN
+Costa Rica,1871,CRI
+Paraguay,1330,PRY
+Nicaragua,2014,NIC
+Uruguay,849,URY
+Jamaica,626,JAM
+Guyana,183,GUY
+Trinidad and Tobago,123,TTO
+Bahamas,104,BHS
+Barbados,97,BRB
+Suriname,261,SUR
+Saint Vincent and the Grenadines,29,VCT
+Antigua and Barbuda,26,ATG
+Grenada,23,GRD
+Saint Lucia,19,LCA
+Belize,22,BLZ
+Dominica,18,DMA
+Saint Kitts and Nevis,15,KNA
+Puerto Rico,6111,PRI
+French Guiana,1758,GUF
+Martinique,221,MTQ
+Guadeloupe,171,GLP
+Cayman Islands,193,CYM
+Bermuda,144,BMU
+Aruba,101,ABW
+Sint Maarten,77,
+United States Virgin Islands,73,VIR
+Saint Martin,42,MAF
+Curacao,23,
+Falkland Islands (Malvinas),13,FLK
+Turks and Caicos Islands,12,TCA
+Montserrat,11,MSR
+British Virgin Islands,8,VGB
+Saint Barthelemy,7,BLM
+"Bonaire, Sint Eustatius and Saba",6,
+Anguilla,3,AIA
+Saint Pierre and Miquelon,1,SPM
+South Africa,83890,ZAF
+Nigeria,18480,NGA
+Algeria,11385,DZA
+Ghana,12929,GHA
+Cameroon,9864,CMR
+Guinea,4841,GIN
+Senegal,5475,SEN
+Democratic Republic of the Congo,5282,COD
+Cote dIvoire,6444,
+Gabon,4340,GAB
+Kenya,4257,KEN
+Guinea-Bissau,1512,GNB
+Mali,1906,MLI
+Ethiopia,3954,ETH
+Zambia,1416,ZMB
+Central African Republic,2605,CAF
+Equatorial Guinea,1043,GNQ
+South Sudan,1813,
+Niger,1020,NER
+Burkina Faso,899,BFA
+Sierra Leone,1272,SLE
+Madagascar,1403,MDG
+Chad,854,TCD
+Congo,883,COG
+Mauritania,2223,MRT
+United Republic of Tanzania,509,TZA
+Cabo Verde,823,
+Uganda,823,UGA
+Togo,544,TGO
+Rwanda,646,RWA
+Malawi,592,MWI
+Mauritius,337,MUS
+Liberia,542,LBR
+Sao Tome and Principe,388,STP
+Eswatini,586,
+Mozambique,662,MOZ
+Benin,597,BEN
+Zimbabwe,463,ZWE
+Angola,166,AGO
+Burundi,104,BDI
+Comoros,210,COM
+Eritrea,142,ERI
+Botswana,79,BWA
+Gambia,36,GMB
+Namibia,39,NAM
+Seychelles,11,SYC
+Lesotho,4,LSO
+Mayotte,2383,MYT
+Reunion,502,REU
+Other,741,

@@ -45,5 +45,39 @@ def main():
         transpose(csv_p, out_p)
 
 
+def match_code():
+    csv_1 = 'dataset/world_map_cases.csv'
+    csv_2 = 'dataset/pop.csv'
+    csv_3 = 'dataset/world_cases_process.csv'
+    with open(csv_1, 'r')as f1, open(csv_2, 'r') as f2, open(csv_3, 'w')as f3:
+        writer = csv.writer(f3)
+        all = []
+        reader1 = csv.reader(f1)
+        row = next(reader1)
+        row.append('code')
+        row.remove('date')
+        all.append(row)
+        reader2 = csv.reader(f2)
+        next(reader2)
+        list1 = list(reader1)
+        list2 = list(reader2)
+        for row1 in list1:
+            country_name = row1[0]
+            count = row1[2]
+            flag = False
+            for row2 in list2:
+                name = row2[0]
+                code = row2[1]
+                if name == country_name:
+                    all.append([country_name, count, code])
+                    flag = True
+                    break
+            if not flag:
+                all.append([country_name, count, ''])
+
+        writer.writerows(all)
+
+
 if __name__ == "__main__":
-    main()
+    match_code()
+    # main()
