@@ -4,6 +4,8 @@
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="scripts/chart.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 <style>
     .overlay {
         fill: none;
@@ -41,13 +43,67 @@
     In order to bring a more comprehensive picture of the current coronavirus situation,
     we create this folder, which will serve as a good complementary to our daily report and the dashboard.</p>
 
+<p>This World map shows confirmed cases (accumulation) across countries until 2020/06/19.
+    The darker the color is, the more severe the situation will be.</p>
+<svg id="my_map" width="960" height="580"></svg>
+<script>
+    // demo from https://www.d3-graph-gallery.com/graph/choropleth_basic.html
+var svg = d3.select("svg"),
+  width = +svg.attr("width"),
+  height = +svg.attr("height");
+
+// Map and projection
+var path = d3.geoPath();
+var projection = d3.geoMercator()
+  .scale(70)
+  .center([0,20])
+  .translate([width / 2, height / 2]);
+
+// Data and color scale
+var data = d3.map();
+var colorScale = d3.scaleThreshold()
+  .domain([1, 1000, 5000, 10000, 100000, 200000, 300000])
+  .range(d3.schemeBlues[7]);
+
+// Load external data and boot
+d3.queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+  .defer(d3.csv, "dataset/world_cases_manually_fix.csv", function(d) { data.set(d.code, +d.count); })
+  .await(ready);
+
+function ready(error, topo) {
+
+  // Draw the map
+  svg.append("g")
+    .selectAll("path")
+    .data(topo.features)
+    .enter()
+    .append("path")
+      // draw each country
+      .attr("d", d3.geoPath()
+        .projection(projection)
+      )
+      // set the color of each country
+      .attr("fill", function (d) {
+        d.total = data.get(d.id) || 0;
+        return colorScale(d.total);
+      });
+    }
+
+</script>
+<p>
+By observing the confirm cases situations all over the world, we could find that US in North America, Turkey in Europea, India in Asian are the most severe countries. As China is the place where the Covid 19 is
+    found so we will also include it as our study objectives.
+    You could find the detailed changes by click on the drop down buttons as follows.
+
+</p>
 <label> Choose one of the countries
     <select class="country" name="country">
         <option value=""> Select One...</option>
         <option value="China">China</option>
         <option value="US">US</option>
         <option value="Turkey">Turkey</option>
-        <option value="Haiti">Haiti</option>
+        <option value="India">India</option>
 </select>
 </label>
 
@@ -60,9 +116,10 @@ const selectElement = document.querySelector('.country');
 var china_csv = "transpose_ds/who_covid_19_China_transpose.csv";
 var us_csv = "transpose_ds/who_covid_19_US_transpose.csv";
 var turkey_csv = "transpose_ds/who_covid_19_Turkey_transpose.csv";
-var haiti_csv = "transpose_ds/who_covid_19_haiti_transpose.csv";
+var India_csv = "transpose_ds/who_covid_19_India_transpose.csv";
 selectElement.addEventListener('change', (event) => {
     console.log(event.target.value);
+
     if(event.target.value === 'China')
         Chart.display(china_csv, 'China');
 
@@ -72,8 +129,8 @@ selectElement.addEventListener('change', (event) => {
     if(event.target.value === 'Turkey')
         Chart.display(turkey_csv, 'Turkey');
 
-    if(event.target.value ==='Haiti')
-        Chart.display(haiti_csv, 'Haiti');
+    if(event.target.value ==='India')
+        Chart.display(India_csv, 'India');
 
 });
 

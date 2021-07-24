@@ -2,7 +2,7 @@
 var Chart = {
     display: function (csv_p, country) {
 
-        var margin = {top: 10, right: 30, bottom: 30, left: 80},
+        var margin = {top: 30, right: 30, bottom: 30, left: 80},
             width = 600 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
@@ -24,13 +24,11 @@ var Chart = {
             .append("text")
             .text("The trend of Covid-19 situation in Turkey is that it keeps increasing.");
         }
-        if(country === 'Haiti'){
+        if(country === 'India'){
             narrative.html("")
             .append("text")
-            .text("The break-out date in Haiti is the latest one. The trend of Covid-19 situation in Haiti is " +
-                "that it keeps increasing.");
+            .text("The break-out date in India is the latest one. The trend of Covid-19 situation in India is that it keeps increasing.");
         }
-
 
         var svg = d3.select("#my_dataviz")
             .html("")
@@ -166,25 +164,25 @@ var Chart = {
             if(country === 'China'){
                 highlight = "The confirmed cases break out on 01/26";
                 x = 10;
-                y = 450;
+                y = 430;
             }
             else if (country === 'US'){
                 highlight = "The confirmed cases break out on 03/22";
                 x = 40;
-                y = 450;
+                y = 430;
 
             }
 
             else if (country === 'Turkey'){
                 highlight =  "The confirmed cases break out happened on 03/27";
                 x = 60;
-                y = 450;
+                y = 430;
             }
 
-            else if (country === "Haiti"){
-                highlight = "The confirmed cases break out around 05/09";
-                x = 120;
-                y = 450;
+            else if (country === 'India'){
+                highlight = "The confirmed cases break out around 05/01";
+                x = 80;
+                y = 430;
             }
             var annotation = svg.append('g');
             annotation.append('text')
