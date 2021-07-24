@@ -78,6 +78,13 @@ def match_code():
         writer.writerows(all)
 
 
+def India_data():
+    csv_p = 'dataset/who_covid_19_India.csv'
+    out_p = 'transpose_ds/who_covid_19_India_transpose.csv'
+    transpose(csv_p, out_p)
+
+
 if __name__ == "__main__":
-    match_code()
+    India_data()
+    # match_code()
     # main()
